@@ -75,6 +75,8 @@
             background: #444;
             color:#9BD239;
         }
+		
+		
 
         /* Grades de Conteúdo */
         .section-title {
@@ -112,7 +114,7 @@
 .grid .channel img,
 .grid-12 .channel img{
     width: auto;
-    height: 70%; /* Ajusta a altura da imagem para ocupar 70% da div */
+    height: auto; /* Ajusta a altura da imagem para ocupar 70% da div */
     max-height: 100px; /* Limita a altura máxima da imagem */
     object-fit: cover;
     border-radius: 10px;
@@ -303,6 +305,12 @@
     .grid, .grid-12 {
         grid-template-columns: 1fr;
     }
+	
+	@media (max-width: 768px) {
+    .nav-left, .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
 }
 
             }
@@ -310,7 +318,12 @@
             .nav-item span {
                 display: none;
             }
-			
+			.nav-left.active, .nav-right.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
 			
         }
     </style>
@@ -322,6 +335,7 @@
             <img src="imagens-canais-incio/lodositegif.gif" alt="Logo">
         </div>
         <nav>
+			        <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
             <div class="nav-left">
                 <a href="#" class="nav-item">
                     <i class="fas fa-home"></i>
@@ -567,6 +581,13 @@
         window.onload = () => {
             updateCounters();
         }
-    </script>
+function toggleMenu() {
+    const navLeft = document.querySelector('.nav-left');
+    const navRight = document.querySelector('.nav-right');
+    navLeft.classList.toggle('active');
+    navRight.classList.toggle('active');
+}
+		
+</script>
 </body>
 </html>
