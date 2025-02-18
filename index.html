@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVs e Câmeras Ao Vivo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Menu */
+        .menu-container {
+            background: #9BD239;
+            padding: 3px 0;
+            position: relative;
+        }
+
+        .logo {
+            text-align: center;
+            padding: 10px;
+            background: #444;
+        }
+
+        .logo img {
+    max-width: 200px;
+    /* Adicione estas 3 linhas */
+    width: 300px;
+    height: 120px;
+    object-fit: cover;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 70px;
+            max-width: 1200px;
+            margin: 0 auto;
+			margin-top: 5px;
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-item {
+            color:#FFFFFF;
+            text-decoration: none;
+            padding: 19px 0;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-item:hover {
+            border-color: white;
+            color: #ccc;
+        }
+
+        .search-box {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #666;
+            background: #444;
+            color:#9BD239;
+        }
+
+        /* Grades de Conteúdo */
+        .section-title {
+            color: #333;
+            margin: 30px 0 20px;
+            text-align: center;
+        }
+
+        .grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+		
+
+		
+		
+		}
+.grid .channel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Garantir que a imagem e o nome estejam sempre alinhados */
+    text-align: center;
+    height: 150px; /* Altura fixa para todas as divs */
+    padding: 10px;
+    border: 2px  #30F700 #42FF00;* Cor cinza suave */
+    transition: border-color 0.3s;
+}
+
+.grid .channel img {
+    width: auto;
+    height: 70%; /* Ajusta a altura da imagem para ocupar 70% da div */
+    max-height: 100px; /* Limita a altura máxima da imagem */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.grid .channel p {
+    margin: 0;
+}
+
+.grid .channel:hover {
+    border-color: orange; /* Cor laranja forte ao passar o mouse */
+}
+
+.grid-12 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.grid-12 .channel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Garantir que a imagem e o nome estejam sempre alinhados */
+    text-align: center;
+    height: 150px; /* Altura fixa para todas as divs */
+    padding: 10px;
+    border: 2px  #30F700 #42FF00;* Cor cinza suave */
+    transition: border-color 0.3s;
+}
+
+.grid-12 .channel img {
+    width: auto;
+    height: 70%; /* Ajusta a altura da imagem para ocupar 70% da div */
+    max-height: 100px; /* Limita a altura máxima da imagem */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.grid-12 .channel p {
+    margin: 0;
+}
+
+.grid-12 .channel:hover {
+    border-color: orange; /* Cor laranja forte ao passar o mouse */
+}
+
+.grid-12 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Exibição em 4 colunas */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.grid-12 .channel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Garantir que a imagem e o nome estejam sempre alinhados */
+    text-align: center;
+    height: 220px; /* Altura fixa para todas as divs */
+    padding: 10px;
+    border: 2px solid #ccc; /* Cor cinza suave */
+    transition: border-color 0.3s;
+}
+
+.grid-12 .channel img {
+    width: 100%;
+    height: 70%; /* Ajusta a altura da imagem para ocupar 70% da div */
+    max-height: 120px; /* Limita a altura máxima da imagem */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.grid-12 .channel p {
+    margin: 0;
+}
+
+.grid-12 .channel:hover {
+    border-color: orange; /* Cor laranja forte ao passar o mouse */		
+		
+		
+		
+}
+
+
+
+
+        }
+
+        .channel {
+            border: 2px solid red;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .channel:hover {
+            border-color: #ff4444;
+            background: #f8f8f8;
+        }
+
+        .see-more {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.see-more-btn {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 20px;
+    background-color: #f1f1f1; /* Fundo cinza claro */
+    border: none;
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra cinza clara */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.see-more-btn:hover {
+    background-color: #008000; /* Cor verde ao passar o mouse */
+    color: white; /* Cor do texto muda para branco */
+        }
+
+        /* Rodapé */
+        footer {
+            background: #333;
+            color: white;
+            padding: 50px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-left {
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-item span {
+                display: none;
+            }
+			
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu -->
+    <div class="menu-container">
+        <div class="logo">
+            <img src="imagens-canais-incio/lodositegif.gif" alt="Logo">
+        </div>
+        <nav>
+            <div class="nav-left">
+                <a href="#" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span><strong>HOME</strong></span>
+                </a>
+                <a href="#" class="nav-item"><strong>CANAIS</strong></a>
+                <a href="#" class="nav-item"><strong>RÁDIOS</strong></a>
+                <a href="#" class="nav-item"><strong>CÂMERAS</strong></a>
+                <a href="#" class="nav-item"><strong>TV AO VIVO</strong></a>
+            </div>
+            <div class="nav-right">
+                <input type="text" class="search-box" placeholder="Buscar canais...">
+                <a href="#" class="nav-item">
+                    <i class="fas fa-lock"></i>
+                    <span>Entrar</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Canais em Destaque -->
+<h2 class="section-title"><strong>CANAIS EM DESTAQUES</strong></h2>
+<div class="grid">
+    <div class="channel">
+      <a href="#"><img src="imagens-canais-incio/sbt.png" alt="SBT"></a>
+<p><strong>SBT</strong></P>
+    </div>
+    <div class="channel">
+        <a href="#"><img src="imagens-canais-incio/tv_Futura.png" alt="Canal 2"></a>
+<p><strong>TV FUTURA</strong></p>
+    </div>
+    <div class="channel">
+        <a href="#"><img src="imagens-canais-incio/rede-brasil.png" alt="Canal 3"></a>
+<p><strong>REDE BRASIL</strong></p>
+    </div>
+    <div class="channel">
+      <a href="#"><img src="imagens-canais-incio/bandtv.png" alt="Canal 4"></a>
+<p><strong>BAND</strong></p>
+    </div>
+	<div class="channel">
+        <a href="#"><img src="imagens-canais-incio/RedeTV!.png" alt="Canal 4"></a>
+<p><strong>REDE TV</strong></p>
+    </div>
+	<div class="channel">
+        <a href="#"><img src="imagens-canais-incio/tv-cultura.png" alt="Canal 4"></a>
+<p><strong>TV CULTURA</strong></p>
+    </div>
+    <!-- Continue até o Canal 18 -->
+</div>
+	<div class="grid">
+    <div class="channel">
+      <a href="#"><img src="imagens-canais-incio/tvescola.png" alt="SBT"></a>
+<p><strong>1980 CHANNEL</strong></P>
+    </div>
+    <div class="channel">
+        <a href="#"><img src="imagens-canais-incio/webtvclassicos.png" alt="Canal 2"></a>
+<p><strong>TV CLÁSSICOS&nbsp;&nbsp;</strong></p>
+    </div>
+    <div class="channel">
+        <a href="#"><img src="imagens-canais-incio/retrocartoon.png" alt="Canal 3"></a>
+<p><strong>RETRÔ CARTOON</strong></p>
+    </div>
+    <div class="channel">
+      <a href="#"><img src="imagens-canais-incio/jetsons.png" alt="Canal 4"></a>
+<p><strong>OS JETSONS</strong></p>
+    </div>
+	<div class="channel">
+        <a href="#"><img src="imagens-canais-incio/Rede_Vida.png" alt="Canal 4"></a>
+<p><strong>REDE TV</strong></p>
+    </div>
+	<div class="channel">
+      <a href="#"><img src="imagens-canais-incio/Record_News.png" alt="Canal 4"></a>
+<p><strong>RECORD NEWS</strong></p>
+    </div>
+    <!-- Continue até o Canal 18 -->
+</div>
+<div class="grid">
+    <div class="channel">
+      <a href="#"><img src="imagens-canais-incio/coudingtv.png" alt="SBT"></a>
+<p><strong>CLOUDING TV</strong></P>
+    </div>
+    <div class="channel">
+        <a href="#"><img src="imagens-canais-incio/tvRecord.png" alt="Canal 2"></a>
+<p><strong>REDE RECORD</strong></p>
+    </div>
+    <div class="channel">
+        <a href="#"><img src="imagens-canais-incio/bonstempostv.png" alt="Canal 3"></a>
+<p><strong>BONS TEMPOS TV</strong></p>
+    </div>
+    <div class="channel">
+      <a href="#"><img src="imagens-canais-incio/Jovem_Pan_News.png" alt="Canal 4"></a>
+<p><strong>JOVEM PAN NEWS</strong></p>
+    </div>
+	<div class="channel">
+        <a href="#"><img src="imagens-canais-incio/animetv.jpg" alt="Canal 4"></a>
+<p><strong>ANIME TV</strong></p>
+    </div>
+	<div class="channel">
+      <a href="#"><img src="imagens-canais-incio/Megatv.png" alt="Canal 4"></a>
+<p><strong>MEGA TV&nbsp;</strong></p>
+    </div>
+    <!-- Continue até o Canal 18 -->
+</div>
+
+	
+<div class="see-more">
+    <a href="#" class="see-more-btn"><i class="fas fa-plus"></i> Veja todos os canais</a>
+</div>
+
+
+<!-- TVs Mais Assistidas -->
+	
+
+<h2 style="margin-top: 60px;"  class="section-title">TVS AO VIVO MAIS ASSISTIDAS</h2>
+<div class="grid">
+    <div class="channel">
+      <a href="#"><img src="imagens-canais-incio/tvaracati.png" alt="SBT"></a>
+<p><strong>TV ARACATI</strong></P>
+    </div>
+    <div class="channel">
+        <a href="#"><img src="imagens-canais-incio/tvRecord.png" alt="Canal 2"></a>
+<p><strong>TV CLÁSSICOS</strong></p>
+    </div>
+    <div class="channel">
+        <a href="#"><img src="imagens-canais-incio/sbt.png" alt="Canal 3"></a>
+<p><strong>SBT</strong></p>
+    </div>
+    <div class="channel">
+      <a href="#"><img src="imagens-canais-incio/Jovem_Pan_News.png" alt="Canal 4"></a>
+<p><strong>JOVEM PAN NEWS</strong></p>
+    </div>
+	<div class="channel">
+        <a href="#"><img src="imagens-canais-incio/classiquetv.png" alt="Canal 4"></a>
+<p><strong>CLASSIQUE TV</strong></p>
+    </div>
+	<div class="channel">
+      <a href="#"><img src="imagens-canais-incio/grjngo.jpg" alt="Canal 4"></a>
+<p><strong>GRJNGO</strong></p>
+    </div>
+    <!-- Continue até o Canal 18 -->
+</div>
+<div class="see-more">
+<a href="#" class="see-more-btn"><i class="fas fa-plus"></i> Veja mais</a>	
+	
+</div>
+
+<!-- Câmeras Online Mais Assistidas -->
+<h2 class="section-title">Câmeras Online Mais Assistidas</h2>
+<div class="grid">
+    <div class="channel">
+        <img src="imagens-canais-incio/santuariodeaparecida.png" alt="Câmera 1">
+        <p>SANTUÁRIO DE APARECIDA</p>
+    </div>
+    <div class="channel">
+        <img src="imagens-canais-incio/aeroportodesaopaulo.png" alt="Câmera 2">
+        <p>AEROPORTO DE&nbsp; CONGONHAS</p>
+    </div>
+    <div class="channel">
+        <img src="imagens-canais-incio/aeroportosantosdumont.png" alt="Câmera 3">
+        <p>AEROPORTO SANTOS DUMONT</p>
+    </div>
+    <div class="channel">
+        <img src="imagens-canais-incio/Ashland - Virginia.png" alt="Câmera 4">
+        <p>ASHLAND - VIRGINIA</p>
+    </div>
+	<div class="channel">
+        <img src="imagens-canais-incio/Sloppy Joes.png" alt="Câmera 4">
+        <p>SLOPPY JOE'S
+</p>
+    </div>
+	<div class="channel">
+        <img src="imagens-canais-incio/Times Square.png" alt="Câmera 4">
+        <p>TIMES SQUARE
+</p>
+    </div>
+    <!-- Continue até a Câmera 8 -->
+</div>
+<div class="see-more">
+
+	<a href="#" class="see-more-btn"><i class="fas fa-plus"></i> Veja mais</a>
+</div>
+
+<!-- Canais Adicionados Recentemente -->
+<h2 class="section-title">Canais Adicionados Recentemente</h2>
+<div class="grid">
+    <div class="channel">
+        <a href="#"><img src="imagens-canais-incio/canal29.png" alt="Canal Recente 1"></a>
+<p><strong>CANAL 29</strong></p>
+    </div>
+    <div class="channel">
+        <a href="#"><img src="imagens-canais-incio/gazeta.png" alt="Canal Recente 2"></a>
+<p><strong>TV GAZETA</strong></p>
+    </div>
+    <div class="channel">
+        <a href="#"><img src="imagens-canais-incio/manchete.jpg" alt="Canal Recente 3"></a>
+<p><strong>MANCHETE</strong></p>
+    </div>
+    <div class="channel">
+        <a href="#"><img src="imagens-canais-incio/otakusing.jpg" alt="Canal Recente 4"></a>
+<p><strong>OTAKU SIGN </strong></p>
+    </div>
+	<div class="channel">
+        <a href="#"><img src="imagens-canais-incio/canalfilmesonline.png" alt="Canal Recente 4"></a>
+<p><strong>CANAIS FILMES </strong></p>
+    </div>
+	<div class="channel">
+        <a href="#"><img src="imagens-canais-incio/tvmax.png" alt="Canal Recente 4"></a>
+<p><strong>MAX TV </strong></p>
+    </div>
+	
+  <!-- Continue até o Canal Recente 12 -->
+</div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3>Estatísticas</h3>
+                <p>Total de Canais: <span id="total-canais">0</span></p>
+                <p>Total de Câmeras: <span id="total-cameras">0</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Contadores dinâmicos
+        function updateCounters() {
+            const canais = document.querySelectorAll('.tv-channel').length;
+            const cameras = document.querySelectorAll('.camera-channel').length;
+            document.getElementById('total-canais').textContent = canais;
+            document.getElementById('total-cameras').textContent = cameras;
+        }
+
+        // Simular carregamento de conteúdo
+        window.onload = () => {
+            updateCounters();
+        }
+    </script>
+</body>
+</html>
