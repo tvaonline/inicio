@@ -93,7 +93,8 @@
 		
 		
 		}
-.grid .channel {
+.grid .channel,
+.grid-12 .channel {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,7 +106,8 @@
     transition: border-color 0.3s;
 }
 
-.grid .channel img {
+.grid .channel img,
+.grid-12 .channel img{
     width: auto;
     height: 70%; /* Ajusta a altura da imagem para ocupar 70% da div */
     max-height: 100px; /* Limita a altura máxima da imagem */
@@ -114,11 +116,13 @@
     margin-bottom: 10px;
 }
 
-.grid .channel p {
+.grid .channel p,
+.grid-12 .channel p {
     margin: 0;
 }
 
-.grid .channel:hover {
+.grid .channel:hover,
+.grid-12 .channel:hover {
     border-color: orange; /* Cor laranja forte ao passar o mouse */
 }
 
@@ -274,32 +278,7 @@
         }
 
         /* Responsividade */
-        @media (max-width: 992px) {
-            .grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-left {
-                overflow-x: auto;
-                padding-bottom: 10px;
-            }
-
-            .grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 576px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .nav-item span {
-                display: none;
-            }
-			@media (max-width: 1200px) {
+        @media (max-width: 1200px) {
     .grid, .grid-12 {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -320,6 +299,15 @@
 @media (max-width: 576px) {
     .grid, .grid-12 {
         grid-template-columns: 1fr;
+    }
+}
+
+            }
+
+            .nav-item span {
+                display: none;
+            }
+			
 			
         }
     </style>
